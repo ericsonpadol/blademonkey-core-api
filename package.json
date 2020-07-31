@@ -1,0 +1,58 @@
+{
+  "name": "blademonkey-core-api",
+  "version": "1.0.0",
+  "description": "aux project core api",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node server",
+    "start:dev": "nodemon server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ericsonpadol/blademonkey-core-api.git"
+  },
+  "keywords": [
+    "blademonkey",
+    "aux",
+    "core",
+    "api"
+  ],
+  "author": "ericson.padol@asurion.com",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-jsx-a11y": "^6.3.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-react-hooks": "^4.0.0",
+    "gulp": "^4.0.2",
+    "gulp-apidoc": "^0.2.8",
+    "jest": "^26.2.1",
+    "nodemon": "^2.0.4",
+    "prettier": "^2.0.5"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "bcryptjs": "^2.4.3",
+    "bluebird": "^3.7.2",
+    "body-parser": "^1.19.0",
+    "config": "^3.3.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-validator": "^6.6.0",
+    "gravatar": "^1.8.1",
+    "helmet": "^3.23.3",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.19",
+    "moment": "^2.27.0",
+    "mongoose": "^5.9.26",
+    "nocache": "^2.1.0",
+    "shortid": "^2.2.15",
+    "uuid": "^8.3.0",
+    "winston": "^3.3.3"
+  }
+}
