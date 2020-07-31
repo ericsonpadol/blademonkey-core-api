@@ -18,7 +18,7 @@
  *  To edit this license information: Press Ctrl+Shift+P and press 'Create new License Template...'.
  */
 const express = require('express');
-const DB = require('blademonkey-data-entities');
+const { DB } = require('blademonkey-data-entities');
 const shortid = require('shortid');
 const faker = require('faker');
 const helmet = require('helmet');
@@ -70,7 +70,14 @@ app.use(
   })
 );
 
+// middleware
 app.use(cors());
+
+app.use(
+  express.json({
+    extended: false,
+  })
+);
 
 logger.info(`${faker.name.firstName()}-${shortid.generate()}`);
 

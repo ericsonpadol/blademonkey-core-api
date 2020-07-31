@@ -1,0 +1,2 @@
+{"errno":"ESERVFAIL","code":"ESERVFAIL","syscall":"querySrv","hostname":"_mongodb._tcp.pasabuydb.rcsji.mongodb.net","level":"error","service":"data-entity"}
+{"message":"account validation failed: mobileNumber: Path `mobileNumber` is required.","level":"error","service":"core-service"}
