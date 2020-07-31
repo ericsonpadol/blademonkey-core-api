@@ -6,5 +6,8 @@
     "logger": {
       "level": "debug"
     }
+  },
+  "mongodb": {
+    "uri": "mongodb+srv://bladeauxy:auxysecure@pasabuydb.rcsji.mongodb.net/<dbname>?retryWrites=true&w=majority"
   }
 }
