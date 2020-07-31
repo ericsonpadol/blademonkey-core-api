@@ -19,7 +19,7 @@
     "api"
   ],
   "author": "ericson.padol@asurion.com",
-  "license": "ISC",
+  "license": "GNU",
   "devDependencies": {
     "eslint": "^7.2.0",
     "eslint-config-airbnb": "^18.2.0",
