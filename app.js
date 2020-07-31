@@ -94,5 +94,6 @@ app.use('/apidoc', (req, res) => {
 
 // initiliaze routes
 app.use('/api/account', require('./src/api/controllers/account.controller'));
+app.use('/api/auth', require('./src/api/controllers/auth.controller'));
 
 module.exports = app;

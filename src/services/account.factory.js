@@ -83,7 +83,32 @@ const findOneUser = async (args = {}, connectionId) => {
   }
 };
 
+const findAccountById = async (args = {}, connectionId) => {
+  try {
+    const user = await Account.findById(args.userId).select('-password');
+    logger.info({ message: user, connectionId });
+
+    if (!user) {
+      return {
+        data: [],
+        status: 404,
+      };
+    }
+    return {
+      data: user,
+      status: 200,
+    };
+  } catch (error) {
+    logger.error(error.message);
+    return {
+      status: 500,
+      message: error.message,
+    };
+  }
+};
+
 module.exports = {
   createNewUser,
   findOneUser,
+  findAccountById,
 };
