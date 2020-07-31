@@ -1,0 +1,17 @@
+{
+  "version": "0.1.0",
+  "name": "blademonkey-core-api",
+  "description": "Project Alfred Core API",
+  "title": "Project Alfred API Core",
+  "url": "https://github.com/ericsonpadol/blademonkey-core-api",
+  "header": {
+    "title": "Project Alfred"
+  },
+  "footer": {
+    "title": "Developed By Blademonkey Studios"
+  },
+  "template": {
+    "withCompare": true,
+    "withGenerator": true
+  }
+}

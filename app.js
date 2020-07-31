@@ -84,6 +84,14 @@ logger.info(`${faker.name.firstName()}-${shortid.generate()}`);
 // connect to mongodb
 DB.connectDB();
 
+// intialize api documentation
+app.use('/apidoc', express.static(`${__dirname}/apidoc`));
+app.use('/apidoc', (req, res) => {
+  res.sendFile('index.html', {
+    root: `${__dirname}/apidoc`,
+  });
+});
+
 // initiliaze routes
 app.use('/api/account', require('./src/api/controllers/account.controller'));
 

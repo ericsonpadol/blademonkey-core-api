@@ -1,6 +1,8 @@
 const express = require('express');
 const { check, validationResult } = require('express-validator');
 const shortid = require('shortid');
+const jwt = require('jsonwebtoken');
+const config = require('config');
 
 // import services
 const { findOneUser, createNewUser } = require('../../services/account.factory');
@@ -12,6 +14,21 @@ const router = express.Router();
 
 router.get('/', (req, res) => res.send('Account Route'));
 
+/**
+ * @api {post} /newAccount Register New Account
+ * @apiVersion 0.1.0
+ * @apiName Register New Account
+ * @apiGroup Account
+ * @apiPermission public
+ * @apiDescription This method will create a new user account
+ * @apiExample Example Usage:
+ * curl -i http://localhost:5000/api/account/newAccount
+ *
+ * @apiSuccess {String} name name of the user
+ * @apiSuccess {String} email email of the user
+ * @apiSuccess {String} password password of the user
+ * @apiSuccess {Number} mobileNumber mobile number registered by the user
+ */
 router.post(
   '/newAccount',
   [
@@ -47,7 +64,11 @@ router.post(
 
     const newUser = await createNewUser({ name, email, password, mobileNumber }, connectionId);
 
-    return res.status(newUser.status).json(newUser);
+    const token = await jwt.sign(newUser.payload, config.get('app.jwt.secret'), {
+      expiresIn: 3600,
+    });
+
+    return res.status(newUser.status).json({ result: newUser, token });
   }
 );
 

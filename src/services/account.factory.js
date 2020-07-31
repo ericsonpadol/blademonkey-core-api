@@ -34,10 +34,17 @@ const createNewUser = async (args = {}, connectionId) => {
 
     logger.info({ result, connectionId });
 
+    const payload = {
+      account: {
+        id: user.id,
+      },
+    };
+
     return {
       status: 200,
       message: `${user.mobileNumber} successfully registered`,
       data: result,
+      payload,
     };
   } catch (error) {
     logger.error(error.message);

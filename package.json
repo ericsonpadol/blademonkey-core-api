@@ -6,9 +6,10 @@
   "scripts": {
     "test": "jest .",
     "test:watch": "jest --watchAll",
-    "start": "node server",
-    "start:dev": "npm run lint && nodemon server",
-    "lint": "eslint ."
+    "start": "npm run apidoc && node server",
+    "start:dev": "npm run lint && npm run apidoc && nodemon server",
+    "lint": "eslint .",
+    "apidoc": "gulp apidoc"
   },
   "repository": {
     "type": "git",

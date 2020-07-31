@@ -5,9 +5,15 @@
   "app": {
     "logger": {
       "level": "debug"
+    },
+    "jwt": {
+      "secret": "batman"
     }
   },
   "mongodb": {
     "uri": "mongodb+srv://bladeauxy:auxysecure@pasabuydb.rcsji.mongodb.net/<dbname>?retryWrites=true&w=majority"
+  },
+  "apidoc": {
+    "debug": true
   }
 }
