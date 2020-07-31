@@ -4,9 +4,11 @@
   "description": "aux project core api",
   "main": "server.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest .",
+    "test:watch": "jest --watchAll",
     "start": "node server",
-    "start:dev": "nodemon server"
+    "start:dev": "npm run lint && nodemon server",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
@@ -31,6 +33,7 @@
     "eslint-plugin-react-hooks": "^4.0.0",
     "gulp": "^4.0.2",
     "gulp-apidoc": "^0.2.8",
+    "husky": "^4.2.5",
     "jest": "^26.2.1",
     "nodemon": "^2.0.4",
     "prettier": "^2.0.5"
@@ -54,5 +57,11 @@
     "shortid": "^2.2.15",
     "uuid": "^8.3.0",
     "winston": "^3.3.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "pre-push": "npm run lint"
+    }
   }
 }
