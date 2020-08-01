@@ -10,4 +10,9 @@ const encrypt = async (value, salt) => {
   return result;
 };
 
-module.exports = { generateSalt, encrypt };
+const checkPasscode = async (a, b) => {
+  const result = await bcrypt.compare(a, b);
+  return result;
+};
+
+module.exports = { generateSalt, encrypt, checkPasscode };

@@ -55,10 +55,15 @@ const createNewUser = async (args = {}, connectionId) => {
   }
 };
 
+/**
+ *
+ * @method findOneUser
+ * @description This method will fetch one user by email
+ */
 const findOneUser = async (args = {}, connectionId) => {
   try {
     const found = await Account.findOne({
-      email: args.email,
+      $or: [{ email: args.email }, { mobileNumber: args.mobileNumber }],
     });
 
     logger.info({ data: found, connectionId });

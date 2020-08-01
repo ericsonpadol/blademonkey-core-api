@@ -22,6 +22,6 @@ const config = require('config');
 const app = require('./app');
 const logger = require('./config/logger');
 
-const port = process.env.PORT || config.get('server.port');
+const port = process.env.PORT || config.get('server.port') || 5000;
 
 app.listen(port, () => logger.info(`Server Started on port ${port}`));

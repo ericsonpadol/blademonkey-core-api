@@ -28,6 +28,7 @@ router.get('/', (req, res) => res.send('Account Route'));
  * @apiSuccess {String} email email of the user
  * @apiSuccess {String} password password of the user
  * @apiSuccess {Number} mobileNumber mobile number registered by the user
+ * @apiSampleRequest http://localhost:5000
  */
 router.post(
   '/newAccount',
